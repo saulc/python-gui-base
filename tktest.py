@@ -8,8 +8,9 @@ class Application(tk.Frame):
         tk.Frame.__init__(self, master, background ='black')
         self.pack()
         self.createWidgets()
+ 
 
-
+#setup ui elements/layout
     def createWidgets(self):
         self.connect = tk.Button(self)
         self.connect.configure(background='black')
