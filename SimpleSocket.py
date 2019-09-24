@@ -18,19 +18,17 @@ class ssocket:
         self.sock.bind((host, port))
         self.sock.listen()
         self.connected = True
-        self.mreceive()
+        conn, addr = self.sock.accept()
+        with conn:
+                print('Connected by', addr)
+                data = conn.recv(1024)
+                print('Message Received: ' + str(data))
+        # self.mreceive()
 
 
     def msend(self, msg):
         self.sock.sendall(str.encode(msg))
 
     def mreceive(self):
-            conn, addr = self.sock.accept()
-            with conn:
-                print('Connected by', addr)
-                while True:
-                    data = conn.recv(1024)
-                    if not data:
-                        break
-                    conn.sendall(data)
-                    print('Message Received: ' + str(data))
+        data = self.sock.recv(1024)
+        print('Message Received: ' + str(data))
