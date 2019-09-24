@@ -15,7 +15,7 @@ class Application(tk.Frame):
 #setup ui elements/layout
     def createWidgets(self):
         self.connect = tk.Button(self)
-        self.connect.configure(background='black')
+        # self.connect.configure(background='black')
         self.connect["text"] = "Connect"
         self.connect["command"] = self.hookup
         self.connect.pack( fill = tk.X)
@@ -24,7 +24,7 @@ class Application(tk.Frame):
         self.pbar.pack( fill = tk.X)
 
         self.option = tk.Button(self)
-        self.option.configure(background='black')
+        # self.option.configure(background='black')
         self.option["text"] = "Options"
         self.option["command"] = self.say_hi
         self.option.pack( fill = tk.X)
